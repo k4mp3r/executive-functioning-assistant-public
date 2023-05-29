@@ -154,7 +154,7 @@ Why you might not want to adopt this yet.
 
 ### Task Execution
 
-The current design phase is focused on only capturing and raising awareness of what I currently have going on. I have not yet designed the system and process for prioritizing and scheduling tasks. That should be coming up soon and I will be exploring that in June 2023. So the current system will help you become aware of all the things you are not doing which can be a source of anxiety.
+The current design phase is focused on only capturing and raising awareness of what I currently have going on. I have not yet designed the system and process for prioritizing and scheduling tasks. That should be coming up soon and I will be exploring that in June 2023. So the current system will help you become aware of all the things you are not doing which can be a source of anxiety if you don't have experience practicing non judgemental self acceptance.
 
 ### Cumbersome
 
