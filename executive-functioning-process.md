@@ -158,7 +158,7 @@ The current design phase is focused on only capturing and raising awareness of w
 
 ### Cumbersome
 
-The current process is time consuming as I am still in the design and implement phase so there is a lot of heavy lifting with documentation and trying to establish new routines. This will get faster as I start moving these tasks from working memory to habitual behavior. Once project the shifts from design and development to maintenance this burden should be reduced.
+The current process is time consuming as I am still in the design and implementation phase so there is a lot of heavy lifting with documentation and trying to establish new routines. This will get faster as I start moving these tasks from working memory to habitual behavior. Once the project shifts from design and development to maintenance this burden should be reduced.
 
 ## Tools & Configurations
 
