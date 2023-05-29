@@ -49,6 +49,7 @@ title: WEEKLY MINDFULNESS LOOP
 ---
 flowchart LR
     E1 & F1 --> A2
+    C1 -->|No| A2
     D2 & F2 & G2 --> H2
     subgraph Retro
         A1[Notification Received] --> B1[Review how well the week aligned with the intention set]
