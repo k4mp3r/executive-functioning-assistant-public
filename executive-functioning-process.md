@@ -185,18 +185,18 @@ The current process is time consuming as I am still in the design and implement 
   - A `smart list` showing tasks with no due date or location trigger should be created to assist with audit process.
   - Current Reminders:
     - Daily:
-      - PT Exercises: 6:50a
+      - PT Exercises: 6a
       - EFA - BuJo / GH project Morning Review: 7:15a
-      - 10mg: 8a
-      - Have courage to be disliked: 8:44a
+      - meds: 8a
+      - [Insert desired mantra here]: 8:44a
       - EFA - BuJo Mid-Day Review: 12p
       - PT Exercises: 12p
-      - 10mg: 12p
-      - 10mg: 4p
-      - Fill Out Actitime: 4p
+      - meds: 12p
+      - meds: 4p
+      - Fill Out Timesheet: 4p
       - EFA - GH Project Review: 4:30p
       - EFA - BuJo Evening Review: 6p
-      - PT Exercises: 6p
+      - PT Exercises: 6:50p (I only need to do this once a day, but I keep forgetting. Sorry Doc if you read this, as you can see, I'm working on it.)
       - 🛑 note current task - begin bedtime routine: 9:40p
     - Weekly
       - EFA - BuJo Retro / Task Migration: Fridays 4:30p
@@ -205,7 +205,6 @@ The current process is time consuming as I am still in the design and implement 
     - Monthly
       - Retro on EFA and make small changes as noted from retros: 19th
       - Request Rx Refill: 26th
-      - Pay extra on Apple Card: 30th
 
 ### Google Calendar
 
@@ -262,14 +261,14 @@ The current process is time consuming as I am still in the design and implement 
 - purpose
   - is used for promoting sleep hygiene and aiding on waking.
 - configuration
-  - Morning
-    - 6am, fade 15 min, whole house: Relax
+  - Morning: Alarm at 6:45a
+    - 6am, fade 15 min, whole house: Relax (dim warm white)
     - 6:29am, fade 15 min, whole house: Concentrate (cool white)
   - Evening
     - 120 min before sunset, instant, whole house: Bright (warm white)
     - 15 min before sunset, fade 15 min, whole house: Tropical Twilight
   - Night
-    - 9pm, fade 15 min, whole house: Dark Nordic
+    - 9pm, fade 15 min, whole house: Dark Orange
     - 10:15p, fade 20 min, whole house: Off
 
 ### Amazon Subscribe and Save
@@ -279,9 +278,7 @@ The current process is time consuming as I am still in the design and implement 
 - configuration
   - Supplements: monthly
   - Dishwasher pods: monthly
-  - Imodium: every 2 months
   - Clif Bars: monthly
-  - Verb Ghost Prep: every 4 months
 
 ### Whiteboard
 
@@ -290,7 +287,7 @@ The current process is time consuming as I am still in the design and implement 
 - configuration
   - VA Appointment mail letters
   - Storm Spotter Number: DL3006
-  - Meal prep scale adjustments
+  - Meal prep scale zeroing amounts
     - Instant pot liner: -1292g
     - Metal Mixing Bowl: -626g
 
@@ -326,21 +323,13 @@ The current process is time consuming as I am still in the design and implement 
 
           ```text
           Write a Title for the transcript that is under 15 words.
-
           Then write: "--Summary--"
-
           Write "Summary" as a Heading 1.
-
           Write a summary of the provided transcript.
-
           Then write: "--Additional Info--".
-
           Then return a list of the main points in the provided transcript. Then return a list of action items. Then return a list of follow up questions. Then return a list of potential arguments against the transcript.
-
           For each list, return a Heading 2 before writing the list items. Limit each list item to 100 words, and return no more than 5 points per list.
-
           Transcript:
-
           {{steps.create_transcription.$return_value.transcription}}
           ```
 
@@ -349,34 +338,21 @@ The current process is time consuming as I am still in the design and implement 
           ```text
           You are an assistant that only speaks in Markdown. Do not write text that isn't formatted as markdown. You may use markdown extended syntax. Action Items should use checkbox markdown syntax.
           You are also an assistant that functioning like a prosthetic to support externalization of executive functioning for an individual diagnosed with ADHD. 
-
           Example formatting:
-
           Testing No-Code Workflow
-
           --Summary--
-
           This audio recording documents a test of a no-code workflow using Google Drive and a single code step to reduce calls and improve efficiency.
-
           --Additional Info--
-
           ## Main Points
-
           - point 1
           - point 2
-
           ## Action Items
-
           - [ ] point 1
           - [ ] point 2
-
           ## Follow Up Questions
-
           - point 1
           - point 2
-
           ## Potential Arguments Against
-
           - point 1
           - point 2
               
@@ -398,10 +374,8 @@ The current process is time consuming as I am still in the design and implement 
               additional_info: "",
               creation_time: new Date(steps.trigger.event.modifiedTime).toLocaleString("en-US", options)
               }
-
               // Add line breaks to the transcript
               const originalTranscript = steps.create_transcription.$return_value.transcription
-
               function splitStringIntoSentences(str) {
                   
               // If the provide string is null, return an array with an error message.
@@ -409,7 +383,6 @@ The current process is time consuming as I am still in the design and implement 
                   const noTranscript = ["Null argument"]
                   return noTranscript
               }
-
               if (str.match(/(?:^|[^.!?]+)[.!?]+\s?/g) == null) {
                   str += str + "."
               }
@@ -417,7 +390,6 @@ The current process is time consuming as I am still in the design and implement 
               const sentences = str.match(/(?:^|[^.!?]+)[.!?]+\s?/g) || [] // split into sentences
               
               const result = []
-
               if (sentences.length > 1) {
                   for (let i = 0; i < sentences.length; i += 3) {
                   result.push(sentences.slice(i, i + 3).join(' ')) // join 3 sentences
@@ -443,31 +415,22 @@ The current process is time consuming as I am still in the design and implement 
                   result.push(currentLine);
                   }
               }
-
               return result
               }
-
               function joinArrayWithBlankLine(arr) {
               return arr.join('\n\n')
               }
-
-
               const transcriptArray = splitStringIntoSentences(originalTranscript)
-
               results.transcript = joinArrayWithBlankLine(transcriptArray)
-
               // Extract the summary
               const summary = steps.chat.$return_value.choices[0].message.content
-
               function splitSummary(str) {
               const titleDelimiter = /^.*\n\n/
               const summaryDelimiter = /\n\s*?--Summary--\s*?\n\s*/
               const additionalInfoDelimiter = /\n\s*?--Additional Info--\s*?\n\s*/;
-
               const titleMatch = str.match(titleDelimiter)
               const summaryMatch = str.match(summaryDelimiter)
               const additionalInfoMatch = str.match(additionalInfoDelimiter)
-
               if (!titleMatch || !summaryMatch || !additionalInfoMatch) {
                   console.log("One or more delimiters not found")
                   return str
@@ -475,25 +438,21 @@ The current process is time consuming as I am still in the design and implement 
                   const titleIndex = titleMatch.index
                   const summaryIndex = summaryMatch.index
                   const additionalInfoIndex = additionalInfoMatch.index
-
                   results.title = str.slice(0, titleIndex + titleMatch[0].length).trim().replace(/^#\s*/,"").replace(/^"|"$/g, '')
                   results.summary = str.slice(summaryIndex + summaryMatch[0].length, additionalInfoIndex).trim()
                   results.additional_info = str.slice(additionalInfoIndex + additionalInfoMatch[0].length).trim()
               }
               }
-
               splitSummary(summary)
-
               // Return the results object
               return results
-
           },
           })
           ```
 
     - Step: Create Issues
       - GitHub Account `k4mp3r`
-      - Repository `k4mp3r/executive-functioning-assistant`
+      - Repository `k4mp3r/executive-functioning-assistant-public`
       - Title: `{{steps.formatter.$return_value.creation_time}} | {{steps.formatter.$return_value.title}}`
       - Body:
 
@@ -565,10 +524,8 @@ The current process is time consuming as I am still in the design and implement 
                   summary: "",
                   creation_time: new Date(steps.trigger.event.modifiedTime).toLocaleString("en-US", options)
                   }
-
                   // Add line breaks to the transcript
                   const originalTranscript = steps.create_transcription.$return_value.transcription
-
                   function splitStringIntoSentences(str) {
                       
                   // If the provide string is null, return an array with an error message.
@@ -576,7 +533,6 @@ The current process is time consuming as I am still in the design and implement 
                       const noTranscript = ["Null argument"]
                       return noTranscript
                   }
-
                   if (str.match(/(?:^|[^.!?]+)[.!?]+\s?/g) == null) {
                       str += str + "."
                   }
@@ -584,7 +540,6 @@ The current process is time consuming as I am still in the design and implement 
                   const sentences = str.match(/(?:^|[^.!?]+)[.!?]+\s?/g) || [] // split into sentences
                   
                   const result = []
-
                   if (sentences.length > 1) {
                       for (let i = 0; i < sentences.length; i += 3) {
                       result.push(sentences.slice(i, i + 3).join(' ')) // join 3 sentences
@@ -610,43 +565,32 @@ The current process is time consuming as I am still in the design and implement 
                       result.push(currentLine);
                       }
                   }
-
                   return result
                   }
-
                   function joinArrayWithBlankLine(arr) {
                   return arr.join('\n\n')
                   }
-
-
                   const transcriptArray = splitStringIntoSentences(originalTranscript)
-
                   results.transcript = joinArrayWithBlankLine(transcriptArray)
-
                   // Extract the summary
                   const summary = steps.chat.$return_value.choices[0].message.content
-
                   function splitSummary(str) {
                   const titleDelimiter = /^.*\n\n/
                   const summaryDelimiter = /\n\s*?--Summary--\s*?\n\s*/
                   
                   const titleMatch = str.match(titleDelimiter)
                   const summaryMatch = str.match(summaryDelimiter)
-
                   if (!titleMatch || !summaryMatch) {
                       console.log("One or more delimiters not found")
                       return str
                   } else {
                       const titleIndex = titleMatch.index
                       const summaryIndex = summaryMatch.index
-
                       results.title = str.slice(0, titleIndex + titleMatch[0].length).trim().replace(/^#\s*/,"").replace(/^"|"$/g, '')
                       results.summary = str.slice(summaryIndex + summaryMatch[0].length).trim()
                   }
                   }
-
                   splitSummary(summary)
-
                   // Return the results object
                   return results
               },
@@ -655,7 +599,7 @@ The current process is time consuming as I am still in the design and implement 
 
     - Step: Create Issues
       - GitHub Account `k4mp3r`
-      - Repository `k4mp3r/executive-functioning-assistant`
+      - Repository `k4mp3r/executive-functioning-assistant-public`
       - Title: `{{steps.formatter.$return_value.creation_time}} | {{steps.formatter.$return_value.title}}`
       - Body:
 
@@ -681,7 +625,7 @@ The current process is time consuming as I am still in the design and implement 
 - purpose
   - physical or digital, designed to support routine tasks and encourages formation of new habits.
 - configuration
-  - Managed in [Checklist Repo](https://github.com/k4mp3r/efa-checklists)
+  - Managed in [Checklist Repo](/)
   - Checklist templates kept in markdown
   - Physical checklists are kept in word doc in same directory as markdown file
   - Printed checklists have efa version number for reference.
@@ -691,4 +635,4 @@ The current process is time consuming as I am still in the design and implement 
 - purpose
   - used for sharing contact info.
 - configuration
-  - Managed [here](https://dash.popl.co/profile/1255695)
+  - Managed [here](https://poplme.co/)
