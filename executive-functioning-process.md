@@ -1,5 +1,6 @@
 # Executive Functioning Assistant Process and Design
 
+note: If you are viewing this at briankampling.com, you may want to go [here](https://github.com/k4mp3r/executive-functioning-assistant-public/blob/main/executive-functioning-process.md) to see the flowcharts rendered visually.
 ## Standing Personal Agreements
 
 - Limit major changes to this system to a monthly basis
