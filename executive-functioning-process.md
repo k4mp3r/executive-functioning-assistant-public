@@ -185,7 +185,7 @@ The current process is time consuming as I am still in the design and implement 
   - A `smart list` showing tasks with no due date or location trigger should be created to assist with audit process.
   - Current Reminders:
     - Daily:
-      - PT Exercises: 6a
+      - PT Exercises: 6:50a
       - EFA - BuJo / GH project Morning Review: 7:15a
       - 10mg: 8a
       - Have courage to be disliked: 8:44a
@@ -196,7 +196,7 @@ The current process is time consuming as I am still in the design and implement 
       - Fill Out Actitime: 4p
       - EFA - GH Project Review: 4:30p
       - EFA - BuJo Evening Review: 6p
-      - PT Exercises: 6:50p
+      - PT Exercises: 6p
       - 🛑 note current task - begin bedtime routine: 9:40p
     - Weekly
       - EFA - BuJo Retro / Task Migration: Fridays 4:30p
