@@ -1,4 +1,4 @@
-# Executive Functioning Assistant Design And Process
+# Executive Functioning Assistant Process and Design
 
 ## Standing Personal Agreements
 
@@ -7,6 +7,157 @@
   - Limits time spent on over optimization
   - Builds resilience
   - Promotes development of internalized mindfulness loop.
+
+## Process
+
+### Daily
+
+```mermaid
+---
+title: FOUNDATIONAL PROCESS
+---
+flowchart LR
+    subgraph Daily Apple Reminders
+        A[Notification Received] --> B{Able to\ncomplete\ntask?}
+        B -->|Yes| C[Complete task]
+        B -->|No| D[Leave Task Uncompleted]
+    end
+    subgraph Weekly Audit
+        C & D --> E[Begin]
+        E --> F{Any\npast due\ntasks?}
+        F -->|Yes| G[Complete outstanding tasks.\nReset recurring tasks that were time sensitive.]
+        G --> H[Retro on missed tasks]
+        H --> I{efa patch\nneeded?}
+        I -->|Yes| J[Patch efa if needed]
+        I -->|No| K[Add efa enhancement issue for monthly review]
+        F -->|No| M[Relax]
+    end
+```
+
+- There are many daily reminders
+- Some are individual tasks and other are triggers to start checklists.
+- The reminders are set at a frequency where if for whatever reason, the task is not completed, it will show as overdue until it is due again.
+- If the natural cycle doesn't pick it up, the weekly retro and weekly audit are designed as a safety net.
+
+### Weekly
+
+#### *Friday evening*
+
+```mermaid
+---
+title: WEEKLY MINDFULNESS LOOP
+---
+flowchart LR
+    E1 & F1 --> A2
+    D2 & F2 & G2 --> H2
+    subgraph Retro
+        A1[Notification Received] --> B1[Review how well the week aligned with the intention set]
+        B1 --> C1{Action Items?}
+        C1 -->|Yes| D1{efa patch\nneeded?}
+        D1 -->|Yes| E1[Patch efa if needed]
+        D1 -->|No| F1[Add efa enhancement issue for monthly review]
+    end
+    subgraph Task Migration
+        A2[Begin] --> B2[Review bujo for open tasks]
+        B2 --> C2{open tasks?}
+        C2 -->|No| D2[Complete Apple reminder task]
+        C2 -->|Yes| E2{Can the task\nbe completed now?}
+        E2 -->|Yes| F2[Complete bujo task]
+        E2 -->|No| G2[Migrate the task to GitHub issue]
+    end
+    H2[Set intention for next week.]
+```
+
+- Task Migration - identify all uncompleted tasks then either:
+  - Do the task
+  - Convert the task into a github issue for the appropriate project
+  - Add the task to google calendar
+  - Add the task to apple reminders with the correct due date
+  - Cancel the task
+- Retrospective
+  - Review how well the week went compared to the intention set.
+  - Identify what went well
+    - Low anxiety
+    - Accomplishments
+    - Positive interpersonal relationships
+    - etc
+  - Identify what didn't go well and determine if there are lifestyle changes needed.
+    - Missed or late appointments or meetings
+    - Over spending
+    - Anxiety or depression
+    - etc
+  - Record any EFA process changes into the efa gh project.
+- Intention setting
+  - What is the focus for next week?
+  - Keep it focused on desired outcomes rather than specific actions.
+
+#### *Sunday evening*
+
+```mermaid
+---
+title: WEEKLY ENTROPY MANAGEMENT
+---
+flowchart LR
+    A[Notification Received] --> E[Create weekly audit github issue]
+    E --> F{Is the template current?}
+    F -->|Yes| G[Begin weekly audit checklist]
+    G --> H[Retro on findings]
+    H --> I{efa patch\nneeded?}
+    I -->|Yes| J[Patch efa if needed]
+    I -->|No| K[Add efa enhancement issue for monthly review]
+    F -->|No| M[Update Template]
+    M --> G
+```
+
+- Verify GitHub weekly audit template is current
+  - Update if needed.
+- Create new GitHub issue for the week
+- Follow the checklist in the issue
+  - Verify I haven't forgotten to follow the efa process and to update tools if I have forgotten.
+  - This also has a side effect of building trust in my process when I review and see that everything is working.
+- Introduce small patch changes to this process if needed.
+- Capture efa enhancements with GitHub issue in this repo tagged with `enhancement`
+
+### Monthly
+
+```mermaid
+---
+title: MONTHLY ENTROPY MANAGEMENT
+---
+flowchart LR
+    A[Notification Received] --> E[Create monthly audit github issue]
+    E --> F{Is the template current?}
+    F -->|Yes| G[Begin weekly audit checklist]
+    G --> H[Retro on findings\nadd to enhancement backlog]
+    H --> I{efa\nenhancements\nneeded?}
+    I -->|Yes| J[Update this document\nwith desired changes]
+    I -->|No| K[Publish major version and update public facing repo]
+    F -->|No| M[Update Template]
+    M --> G
+    J --> K
+```
+
+- Retro on EFA process and make adjustments based on finds recorded in efa project issues
+- Update this document to reflect process changes.
+- Add additional month of entries to bujo
+- Create new version release in github
+- Update public facing repo to share with others.
+
+### Quarterly and Yearly
+
+Same process at monthly at this point.
+
+## Known Gaps And Limitations
+
+Why you might not want to adopt this yet.
+
+### Task Execution
+
+The current design phase is focused on only capturing and raising awareness of what I currently have going on. I have not yet designed the system and process for prioritizing and scheduling tasks. That should be coming up soon and I will be exploring that in June 2023. So the current system will help you become aware of all the things you are not doing which can be a source of anxiety.
+
+### Cumbersome
+
+The current process is time consuming as I am still in the design and implement phase so there is a lot of heavy lifting with documentation and trying to establish new routines. This will get faster as I start moving these tasks from working memory to habitual behavior. Once project the shifts from design and development to maintenance this burden should be reduced.
 
 ## Tools & Configurations
 
@@ -36,16 +187,16 @@
     - Daily:
       - PT Exercises: 6a
       - EFA - BuJo / GH project Morning Review: 7:15a
-      - meds: 8a
-      - [Insert desired mantra here]: 8:44a
+      - 10mg: 8a
+      - Have courage to be disliked: 8:44a
       - EFA - BuJo Mid-Day Review: 12p
       - PT Exercises: 12p
-      - meds: 12p
-      - meds: 4p
-      - Fill Out Timesheet: 4p
+      - 10mg: 12p
+      - 10mg: 4p
+      - Fill Out Actitime: 4p
       - EFA - GH Project Review: 4:30p
       - EFA - BuJo Evening Review: 6p
-      - PT Exercises: 6:50p (I only need to do this once a day, but I keep forgetting. Sorry Doc if you read this, as you can see, I'm working on it.)
+      - PT Exercises: 6:50p
       - 🛑 note current task - begin bedtime routine: 9:40p
     - Weekly
       - EFA - BuJo Retro / Task Migration: Fridays 4:30p
@@ -54,6 +205,7 @@
     - Monthly
       - Retro on EFA and make small changes as noted from retros: 19th
       - Request Rx Refill: 26th
+      - Pay extra on Apple Card: 30th
 
 ### Google Calendar
 
@@ -110,14 +262,14 @@
 - purpose
   - is used for promoting sleep hygiene and aiding on waking.
 - configuration
-  - Morning: Alarm at 6:45a
-    - 6am, fade 15 min, whole house: Relax (dim warm white)
+  - Morning
+    - 6am, fade 15 min, whole house: Relax
     - 6:29am, fade 15 min, whole house: Concentrate (cool white)
   - Evening
     - 120 min before sunset, instant, whole house: Bright (warm white)
     - 15 min before sunset, fade 15 min, whole house: Tropical Twilight
   - Night
-    - 9pm, fade 15 min, whole house: Dark Orange
+    - 9pm, fade 15 min, whole house: Dark Nordic
     - 10:15p, fade 20 min, whole house: Off
 
 ### Amazon Subscribe and Save
@@ -127,7 +279,9 @@
 - configuration
   - Supplements: monthly
   - Dishwasher pods: monthly
+  - Imodium: every 2 months
   - Clif Bars: monthly
+  - Verb Ghost Prep: every 4 months
 
 ### Whiteboard
 
@@ -136,7 +290,7 @@
 - configuration
   - VA Appointment mail letters
   - Storm Spotter Number: DL3006
-  - Meal prep scale zeroing amounts
+  - Meal prep scale adjustments
     - Instant pot liner: -1292g
     - Metal Mixing Bowl: -626g
 
@@ -339,7 +493,7 @@
 
     - Step: Create Issues
       - GitHub Account `k4mp3r`
-      - Repository `k4mp3r/executive-functioning-assistant-public`
+      - Repository `k4mp3r/executive-functioning-assistant`
       - Title: `{{steps.formatter.$return_value.creation_time}} | {{steps.formatter.$return_value.title}}`
       - Body:
 
@@ -501,7 +655,7 @@
 
     - Step: Create Issues
       - GitHub Account `k4mp3r`
-      - Repository `k4mp3r/executive-functioning-assistant-public`
+      - Repository `k4mp3r/executive-functioning-assistant`
       - Title: `{{steps.formatter.$return_value.creation_time}} | {{steps.formatter.$return_value.title}}`
       - Body:
 
@@ -527,7 +681,7 @@
 - purpose
   - physical or digital, designed to support routine tasks and encourages formation of new habits.
 - configuration
-  - Managed in [Checklist Repo](/)
+  - Managed in [Checklist Repo](https://github.com/k4mp3r/efa-checklists)
   - Checklist templates kept in markdown
   - Physical checklists are kept in word doc in same directory as markdown file
   - Printed checklists have efa version number for reference.
@@ -537,158 +691,4 @@
 - purpose
   - used for sharing contact info.
 - configuration
-  - Managed [here](https://poplme.co/)
-
-## Process
-
-<!-- TODO Create monthly schedule of recurring tasks -->
-
-### Daily
-
-```mermaid
----
-title: FOUNDATIONAL PROCESS
----
-flowchart LR
-    subgraph Daily Apple Reminders
-        A[Notification Received] --> B{Able to\ncomplete\ntask?}
-        B -->|Yes| C[Complete task]
-        B -->|No| D[Leave Task Uncompleted]
-    end
-    subgraph Weekly Audit
-        C & D --> E[Begin]
-        E --> F{Any\npast due\ntasks?}
-        F -->|Yes| G[Complete outstanding tasks.\nReset recurring tasks that were time sensitive.]
-        G --> H[Retro on missed tasks]
-        H --> I{efa patch\nneeded?}
-        I -->|Yes| J[Patch efa if needed]
-        I -->|No| K[Add efa enhancement issue for monthly review]
-        F -->|No| M[Relax]
-    end
-```
-
-- There are many daily reminders
-- Some are individual tasks and other are triggers to start checklists.
-- The reminders are set at a frequency where if for whatever reason, the task is not completed, it will show as overdue until it is due again.
-- If the natural cycle doesn't pick it up, the weekly retro and weekly audit are designed as a safety net.
-
-### Weekly
-
-#### *Friday evening*
-
-```mermaid
----
-title: WEEKLY MINDFULNESS LOOP
----
-flowchart LR
-    E1 & F1 --> A2
-    D2 & F2 & G2 --> H2
-    subgraph Retro
-        A1[Notification Received] --> B1[Review how well the week aligned with the intention set]
-        B1 --> C1{Action Items?}
-        C1 -->|Yes| D1{efa patch\nneeded?}
-        D1 -->|Yes| E1[Patch efa if needed]
-        D1 -->|No| F1[Add efa enhancement issue for monthly review]
-    end
-    subgraph Task Migration
-        A2[Begin] --> B2[Review bujo for open tasks]
-        B2 --> C2{open tasks?}
-        C2 -->|No| D2[Complete Apple reminder task]
-        C2 -->|Yes| E2{Can the task\nbe completed now?}
-        E2 -->|Yes| F2[Complete bujo task]
-        E2 -->|No| G2[Migrate the task to GitHub issue]
-    end
-    H2[Set intention for next week.]
-```
-
-- Task Migration - identify all uncompleted tasks then either:
-  - Do the task
-  - Convert the task into a github issue for the appropriate project
-  - Add the task to google calendar
-  - Add the task to apple reminders with the correct due date
-  - Cancel the task
-- Retrospective
-  - Review how well the week went compared to the intention set.
-  - Identify what went well
-    - Low anxiety
-    - Accomplishments
-    - Positive interpersonal relationships
-    - etc
-  - Identify what didn't go well and determine if there are lifestyle changes needed.
-    - Missed or late appointments or meetings
-    - Over spending / eating
-    - Anxiety or depression
-    - etc
-  - Record any EFA process changes into the efa gh project.
-- Intention setting
-  - What is the focus for next week?
-  - Keep it focused on desired outcomes rather than specific actions.
-
-#### *Sunday evening*
-
-```mermaid
----
-title: WEEKLY ENTROPY MANAGEMENT
----
-flowchart LR
-    A[Notification Received] --> E[Create weekly audit github issue]
-    E --> F{Is the template current?}
-    F -->|Yes| G[Begin weekly audit checklist]
-    G --> H[Retro on findings]
-    H --> I{efa patch\nneeded?}
-    I -->|Yes| J[Patch efa if needed]
-    I -->|No| K[Add efa enhancement issue for monthly review]
-    F -->|No| M[Update Template]
-    M --> G
-```
-
-- Verify GitHub weekly audit template is current
-  - Update if needed.
-- Create new GitHub issue for the week
-- Follow the checklist in the issue
-  - Verify I haven't forgotten to follow the efa process and to update tools if I have forgotten.
-  - This also has a side effect of building trust in my process when I review and see that everything is working.
-- Introduce small patch changes to this process if needed.
-- Capture efa enhancements with GitHub issue in this repo tagged with `enhancement`
-
-### Monthly
-
-```mermaid
----
-title: MONTHLY ENTROPY MANAGEMENT
----
-flowchart LR
-    A[Notification Received] --> E[Create monthly audit github issue]
-    E --> F{Is the template current?}
-    F -->|Yes| G[Begin weekly audit checklist]
-    G --> H[Retro on findings\nadd to enhancement backlog]
-    H --> I{efa\nenhancements\nneeded?}
-    I -->|Yes| J[Update this document\nwith desired changes]
-    I -->|No| K[Publish major version and update public facing repo]
-    F -->|No| M[Update Template]
-    M --> G
-    J --> K
-```
-
-- Retro on EFA process and make adjustments based on finds recorded in efa project issues
-- Update this document to reflect process changes.
-- Add additional month of entries to bujo
-- Create new version release in github
-- Update public facing repo to share with others.
-
-### Quarterly and Yearly
-
-Same process at monthly at this point.
-
-## Known Gaps And Limitations
-
-Why you might not want to adopt this yet.
-
-### Task Execution
-
-The current design phase is focused on only capturing and raising awareness of what I currently have going on. I have not yet designed the system and process for prioritizing and scheduling tasks. That should be coming up soon and I will be exploring that in June 2023. So the current system will help you become aware of all the things you are not doing which can be a source of anxiety.
-
-### Cumbersome
-
-The current process is time consuming as I am still in the design and implement phase so there is a lot of heavy lifting with documentation and trying to establish new routines. This will get faster as I start moving these tasks from working memory to habitual behavior. Once project the shifts from design and development to maintenance this burden should be reduced.
-
+  - Managed [here](https://dash.popl.co/profile/1255695)
