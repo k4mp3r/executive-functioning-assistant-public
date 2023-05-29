@@ -35,7 +35,7 @@ flowchart LR
 ```
 
 - There are many daily reminders
-- Some are individual tasks and other are triggers to start checklists.
+- Some are individual tasks and others are triggers to start checklists.
 - The reminders are set at a frequency where if for whatever reason, the task is not completed, it will show as overdue until it is due again.
 - If the natural cycle doesn't pick it up, the weekly retro and weekly audit are designed as a safety net.
 
