@@ -14,7 +14,7 @@ Completed:
 
 - Does this template need to be updated?
   - [ ] Yes:
-  - [x] No:
+  - [ ] No:
 
 ### Bullet Journal
 
@@ -38,11 +38,6 @@ Completed:
 
 - [ ] Check flagged emails
 
-### EFA Project
-
-- [ ] Issues set with priority and size
-- [ ] Issues in correct status
-- [ ] Inbox sorted
 
 ### Voice Recorder
 
@@ -59,3 +54,9 @@ Completed:
 
 - [ ] Amazon Subscribe and Save
 - [ ] Whiteboard
+
+### EFA Project
+
+- [ ] Issues set with priority and size
+- [ ] Issues in correct status
+- [ ] Inbox sorted
